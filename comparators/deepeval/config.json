@@ -1,0 +1,22 @@
+{
+  "tool": "deepeval",
+  "oracle": "semantic",
+  "tenant": "tenant-0001",
+  "judge": {
+    "model": "gemma-7b-it",
+    "threshold_tau": 0.75,
+    "note": "any served open-weight model; set to the served model name. The base templates are DeepEval's own, which is the comparison point for the prompt-tuning difference reported in the paper."
+  },
+  "parallelism": {
+    "workers": 1,
+    "note": "measured serially because the metric call is the bottleneck; the SCODA side applies the same judge under the same threshold"
+  },
+  "measurement": {
+    "runs": 5,
+    "resolution": "5-unit grid for the reported M1/M2 figures",
+    "report": "mean over runs"
+  },
+  "configuration_locus": "startup",
+  "m3_level": 2,
+  "multi_tenant": "None"
+}

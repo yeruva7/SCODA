@@ -1,0 +1,46 @@
+# promptfoo configuration. A value passed with --var at dispatch reaches the
+# running test with no file authored for it, which is M3 level 3 (Table 1).
+#
+#   npx promptfoo@latest eval -c promptfooconfig.yaml \
+#       --var tenant=tenant-0001 --var tier=staging --var tau=0.75
+#
+# tenants/ holds one file per tenant for the inheritance comparison; the
+# --var path above authors nothing.
+
+description: Comparator configuration for federated search evaluation
+
+providers:
+  - id: https
+    config:
+      url: '{{ env.SUT_ENDPOINT }}/search'
+      method: POST
+      headers:
+        Content-Type: application/json
+      body:
+        query: '{{ query }}'
+        tenant: '{{ tenant }}'
+        tier: '{{ tier }}'
+      transformResponse: 'json.answer'
+
+defaultTest:
+  options:
+    provider: '{{ env.JUDGE_ENDPOINT }}'
+  assert:
+    - type: is-json
+    - type: javascript
+      value: 'output && output.length > 0'
+    - type: llm-rubric
+      value: 'The answer carries the same meaning as: {{ expected }}'
+      threshold: '{{ tau }}'
+
+prompts:
+  - '{{ query }}'
+
+tests: file://cases/functional_500.yaml
+
+outputPath: runs/promptfoo_latest.json
+
+# Concurrency matched to the protocol's 16 workers.
+evaluateOptions:
+  maxConcurrency: 16
+  repeat: 1

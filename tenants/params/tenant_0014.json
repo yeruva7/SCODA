@@ -1,0 +1,31 @@
+{
+  "tenant": "tenant-0014",
+  "config_level": "tenant-base",
+  "surface": "news",
+  "locale": "en_US",
+  "state_id": 22,
+  "inherits_shared_groups": [
+    "locale_fallback",
+    "empty_query"
+  ],
+  "flags": {
+    "semantic_validation_v1": false,
+    "strict_pagination": false
+  },
+  "validation": {
+    "structural": {
+      "enabled": true
+    },
+    "semantic": {
+      "enabled": false,
+      "threshold_tau": null,
+      "judge_criteria": null,
+      "dimension_minima": {}
+    }
+  },
+  "gate": {
+    "threshold_pass_rate": 0.97,
+    "priority": "standard"
+  },
+  "tenant_specific_tests": []
+}

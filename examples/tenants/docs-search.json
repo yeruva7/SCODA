@@ -1,0 +1,8 @@
+{
+  "tenant": "docs-search",
+  "config_level": "tenant-base",
+  "flags": {},
+  "validation": {
+    "semantic": { "enabled": false }
+  }
+}

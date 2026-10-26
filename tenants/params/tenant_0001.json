@@ -1,0 +1,35 @@
+{
+  "tenant": "tenant-0001",
+  "config_level": "tenant-base",
+  "surface": "docs",
+  "locale": "en_GB",
+  "state_id": 18,
+  "inherits_shared_groups": [
+    "structural_core",
+    "pagination",
+    "ranking_sanity",
+    "locale_fallback"
+  ],
+  "flags": {
+    "semantic_validation_v1": true,
+    "strict_pagination": false
+  },
+  "validation": {
+    "structural": {
+      "enabled": true
+    },
+    "semantic": {
+      "enabled": true,
+      "threshold_tau": 0.75,
+      "judge_criteria": "equivalence",
+      "dimension_minima": {
+        "safety": 0.9
+      }
+    }
+  },
+  "gate": {
+    "threshold_pass_rate": 0.97,
+    "priority": "standard"
+  },
+  "tenant_specific_tests": []
+}

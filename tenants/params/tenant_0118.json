@@ -1,0 +1,35 @@
+{
+  "tenant": "tenant-0118",
+  "config_level": "tenant-base",
+  "surface": "media",
+  "locale": "pt_BR",
+  "state_id": 12,
+  "inherits_shared_groups": [
+    "structural_core",
+    "pagination",
+    "ranking_sanity",
+    "empty_query"
+  ],
+  "flags": {
+    "semantic_validation_v1": false,
+    "strict_pagination": false
+  },
+  "validation": {
+    "structural": {
+      "enabled": true
+    },
+    "semantic": {
+      "enabled": false,
+      "threshold_tau": null,
+      "judge_criteria": null,
+      "dimension_minima": {}
+    }
+  },
+  "gate": {
+    "threshold_pass_rate": 1.0,
+    "priority": "standard"
+  },
+  "tenant_specific_tests": [
+    "specific_0118_0"
+  ]
+}

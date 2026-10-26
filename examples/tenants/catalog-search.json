@@ -1,0 +1,10 @@
+{
+  "tenant": "catalog-search",
+  "config_level": "tenant-base",
+  "flags": {
+    "semantic_validation_v1": true
+  },
+  "validation": {
+    "semantic": { "enabled": true, "threshold_tau": 0.75, "judge_criteria": "equivalence" }
+  }
+}

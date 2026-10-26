@@ -1,0 +1,36 @@
+{
+  "tenant": "tenant-0129",
+  "config_level": "tenant-base",
+  "surface": "news",
+  "locale": "fr_FR",
+  "state_id": 25,
+  "inherits_shared_groups": [
+    "pagination",
+    "ranking_sanity",
+    "locale_fallback",
+    "empty_query"
+  ],
+  "flags": {
+    "semantic_validation_v1": false,
+    "strict_pagination": true
+  },
+  "validation": {
+    "structural": {
+      "enabled": true
+    },
+    "semantic": {
+      "enabled": false,
+      "threshold_tau": null,
+      "judge_criteria": null,
+      "dimension_minima": {}
+    }
+  },
+  "gate": {
+    "threshold_pass_rate": 1.0,
+    "priority": "standard"
+  },
+  "tenant_specific_tests": [
+    "specific_0129_0",
+    "specific_0129_1"
+  ]
+}

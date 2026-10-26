@@ -1,0 +1,8 @@
+vars:
+  tenant: tenant-0009
+  tier: staging
+  tau: 0.75
+assert:
+  - type: llm-rubric
+    value: "The answer carries the same meaning as: {{ expected }}"
+    threshold: 0.75

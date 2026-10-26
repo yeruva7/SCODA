@@ -1,0 +1,23 @@
+{
+  "tool": "selenium",
+  "oracle": "structural",
+  "tenant": "tenant-0001",
+  "browser": {
+    "name": "chrome",
+    "flags": ["--headless=new", "--disable-gpu", "--no-sandbox", "--window-size=1280,1024"],
+    "page_load_timeout_s": 10
+  },
+  "parallelism": {
+    "workers": 16,
+    "note": "one browser profile per worker; tenant selection is a URL parameter because the tool has no configuration inheritance"
+  },
+  "measurement": {
+    "runs": 5,
+    "warm_up_cases": 20,
+    "resolution": "5-unit grid for the reported M1/M2 figures",
+    "report": "mean over runs"
+  },
+  "configuration_locus": "authorship",
+  "m3_level": 1,
+  "multi_tenant": "None"
+}

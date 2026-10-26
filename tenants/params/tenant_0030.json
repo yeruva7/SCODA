@@ -1,0 +1,36 @@
+{
+  "tenant": "tenant-0030",
+  "config_level": "tenant-base",
+  "surface": "catalog",
+  "locale": "de_DE",
+  "state_id": 7,
+  "inherits_shared_groups": [
+    "structural_core",
+    "pagination",
+    "ranking_sanity",
+    "empty_query"
+  ],
+  "flags": {
+    "semantic_validation_v1": false,
+    "strict_pagination": false
+  },
+  "validation": {
+    "structural": {
+      "enabled": true
+    },
+    "semantic": {
+      "enabled": false,
+      "threshold_tau": null,
+      "judge_criteria": null,
+      "dimension_minima": {}
+    }
+  },
+  "gate": {
+    "threshold_pass_rate": 0.97,
+    "priority": "standard"
+  },
+  "tenant_specific_tests": [
+    "specific_0030_0",
+    "specific_0030_1"
+  ]
+}

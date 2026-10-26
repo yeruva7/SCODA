@@ -1,0 +1,8 @@
+{
+  "validation": {
+    "structural": { "enabled": true },
+    "semantic": { "enabled": false, "threshold_tau": 0.75 }
+  },
+  "flags": {},
+  "release_gates": ["STAGING", "PRODUCTION"]
+}

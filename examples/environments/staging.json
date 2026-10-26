@@ -1,0 +1,4 @@
+{
+  "release_gates": ["STAGING"],
+  "qps_cap": 50
+}

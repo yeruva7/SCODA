@@ -1,0 +1,11 @@
+# Shared base assertions, inherited by every promptfoo tenant file.
+# Changing a default here requires editing each tenant file or templating
+# outside the tool, which is the R4 difference reported in Table 3.
+assert:
+  - type: is-json
+  - type: javascript
+    value: 'output && output.length > 0'
+  - type: contains-any
+    value: ['result', 'answer', 'snippet']
+  - type: latency
+    threshold: 2000
